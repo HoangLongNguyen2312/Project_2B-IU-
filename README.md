@@ -5,9 +5,6 @@ These devices are widely used in scientific and medical applications, where prec
 The ease of control, coupled with their accuracy, makes syringe pumps ideal for tasks that require steady, repeatable delivery of fluids, such as drug infusion, chemical reactions, or even lab-scale experiments in a controlled environment. 
 
 ## Block Diagram about our project
-flowchart LR
-
-
 ```mermaid
 flowchart LR
     A((start)) --> B[Check Syringe Status]
@@ -20,5 +17,6 @@ flowchart LR
     H --> L[Check pump status]
     L --> M[Monitor pump operation]
     M --> Z((end))
+
 
 
