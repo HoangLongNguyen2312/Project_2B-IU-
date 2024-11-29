@@ -5,14 +5,20 @@ These devices are widely used in scientific and medical applications, where prec
 The ease of control, coupled with their accuracy, makes syringe pumps ideal for tasks that require steady, repeatable delivery of fluids, such as drug infusion, chemical reactions, or even lab-scale experiments in a controlled environment. 
 
 ## Block Diagram about our project
+flowchart LR
+
+
 ```mermaid
 flowchart LR
-    A[V(in) 12 VDC] --> B[3A Buck Converter Circuit]
-    B --> C[5V]
-    C --> D[ESP 32]
-    B --> E[Buttons]
-    B --> F[LCD SCL/ SDA]
-    B --> G[Stepper Driver]
-    A --> G
-    G --> H[Stepper]
+    A((start)) --> B[Check Syringe Status]
+    B --> C{Suitable Syringe Volume}
+    C -->|No| D[Adjust the suitable volume]
+    C -->|Yes| E[Input the volume to be pumped]
+    E --> F[Fill the syringe with the solution]
+    F --> G[Push button to start syringe pump]
+    G --> H[Check the remaining liquid level]
+    H --> L[Check pump status]
+    L --> M[Monitor pump operation]
+    M --> Z((end))
+
 
